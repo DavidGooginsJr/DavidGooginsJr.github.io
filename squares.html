@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="800"></canvas>
+  </body>
+</html>
+
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  var x = 100;
+  var y = 100;
+  var speedx = 2;
+  var speedy = 4;
+
+  setInterval(moveBox, 10);
+
+  function moveBox() {
+    x = x + speedx;
+    y = y + speedy;
+
+    document.getElementById("image").style.left = x + "px";
+
+    document.getElementById("image").style.top = y + "px";
+
+    if (x < 0) {
+      speedx = -speedx;
+    }
+
+    if (x > 800) {
+      speedx = -speedx;
+    }
+    if (y < 0) {
+      speedy = -speedy;
+    }
+
+    if (y > 600) {
+      speedy = -speedy;
+    }
+  }
+</script>
