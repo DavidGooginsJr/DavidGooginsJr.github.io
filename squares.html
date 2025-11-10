@@ -12,34 +12,46 @@
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
 
-  var x = 100;
-  var y = 100;
-  var speedx = 2;
-  var speedy = 4;
+  var x = [50, 100];
+  var y = [50, 100];
+  var speedx = [2, 5];
+  var speedy = [4, 3];
 
   setInterval(moveBox, 10);
 
   function moveBox() {
-    x = x + speedx;
-    y = y + speedy;
-
-    document.getElementById("image").style.left = x + "px";
-
-    document.getElementById("image").style.top = y + "px";
-
-    if (x < 0) {
-      speedx = -speedx;
+    ctx.clearRect(0, 0, 2000, 2000);
+    x[0] = x[0] + speedx;
+    x[1] = x[1] + speedx;
+    y[0] = y[0] + speedy;
+    y[1] = y[1] + speedy;
+    ctx.fillRect(x[0], y[0], 20, 20);
+    ctx.fillRect(x[1], y[1], 20, 20);
+    if (x[0] < 0) {
+      speedx[2,5] = -speedx;
+    }
+    if (x[1] < 0) {
+      speedx[2,5] = -speedx;
     }
 
-    if (x > 800) {
-      speedx = -speedx;
+    if (x[0] > 800) {
+      speedx[2,5] = -speedx;
     }
-    if (y < 0) {
-      speedy = -speedy;
+    if (x[1] > 800) {
+      speedx[2,5] = -speedx;
+    }
+    if (y[0] < 0) {
+      speedy[4,3] = -speedy;
+    }
+    if (y[1] < 0) {
+      speedy[4,3] = -speedy;
     }
 
-    if (y > 600) {
-      speedy = -speedy;
+    if (y[0] > 600) {
+      speedy[4,3] = -speedy;
+    }
+    if (y[1] > 600) {
+      speedy[4,3] = -speedy;
     }
   }
 </script>
